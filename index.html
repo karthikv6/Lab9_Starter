@@ -99,9 +99,86 @@
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
+    console.log(errorBtns)
 
-    // Start your code here
-    // You may move this JS to another file if you wish
+    errorBtns[0].addEventListener('click', () => {
+      console.log('console.log')
+    });
+
+    errorBtns[1].addEventListener('click', () => {
+      console.error('console.error')
+    });
+
+    errorBtns[2].addEventListener('click', () => {
+      console.count('console.count')
+    });
+
+    errorBtns[3].addEventListener('click', () => {
+      console.warn('console.warn')
+    });
+
+    errorBtns[4].addEventListener('click', () => {
+      console.assert(0 == 1, '', {number: 1, errorMsg: '0 is not equal to 1' })
+    });
+
+    errorBtns[5].addEventListener('click', () => {
+      console.clear()
+    });
+
+    errorBtns[6].addEventListener('click', () => {
+      console.dir(errorBtns[6])
+    });
+
+    errorBtns[7].addEventListener('click', () => {
+      console.dirxml(errorBtns[7])
+    });
+
+    errorBtns[8].addEventListener('click', () => {
+      console.group()
+    });
+
+    errorBtns[9].addEventListener('click', () => {
+      console.groupEnd()
+    });
+
+    errorBtns[10].addEventListener('click', () => {
+      console.table([{ numbers: '0, 0', operation: '+', answer: 0 },
+      { numbers: '0, 1', operation: '-', answer: 1 },
+      { numbers: '1, 1', operation: '%', answer: 0 }])
+    });
+
+    errorBtns[11].addEventListener('click', () => {
+      console.time('Timer Demo')
+    });
+
+    errorBtns[12].addEventListener('click', () => {
+      console.timeEnd('Timer Demo')
+      try {
+        TrackJS.track('Testing TrackJS!');
+        throw new Error('hi')
+      }
+      catch (error) {
+        throw error
+      }
+      finally {
+        console.log('error test done')
+      }
+    });
+
+    errorBtns[13].addEventListener('click', () => {
+      console.trace()
+    });
+
+
+
+
+  </script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({
+      token: "cd8723cf119c47ecaa893096bba9a904"
+      // for more configuration options, see https://docs.trackjs.com
+    });
   </script>
 </body>
 
